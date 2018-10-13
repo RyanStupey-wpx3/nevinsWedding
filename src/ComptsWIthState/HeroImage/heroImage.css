@@ -1,0 +1,10 @@
+.heroComponentDiv {
+    width: 100%;
+}
+.heroComponentParent {
+    width: 100%;
+    background-size: cover;
+}
+.heroSrcImage {
+    width: 100%;
+}
