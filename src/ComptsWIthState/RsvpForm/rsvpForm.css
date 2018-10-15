@@ -1,0 +1,14 @@
+.rsvpComponentDiv{
+    width: 100%;
+    height: 30rem;
+    border: 2px solid red;
+}
+.rsvpParentDiv{
+    width: 40%;
+    height: inherit;
+    border: 2px solid blue;
+    margin: 0 auto;
+}
+.rsvpTitle{
+    text-align: center;
+}

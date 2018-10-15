@@ -1,0 +1,89 @@
+.itineraryComponentDiv{
+    border: 3px solid green;
+    width: 100%;
+    height: inherit;
+}
+.itineraryParentDiv{
+    /* border: 2px solid gold; */
+    padding-top: 3rem;
+    margin: 0 auto;
+    width: 85%;
+    height: 33rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.tabSizer{
+    border:2px solid purple;
+
+    width: 30%;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+   
+    color: #761e35;
+}
+.locationImage{
+    /* border: 2px solid yellowgreen; */
+    width: 100%;
+    height: 45%;
+   
+}
+.tabSizer h1 {
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+}
+
+.dateAndTime{
+    margin-top: 1rem;
+    font-family: arial;
+    font-size: 16px;
+    font-weight: 600;
+}
+.location{
+    font-family: arial;
+    font-size: 18px;
+}
+.locationDesc{
+/* border: 2px solid red; */
+ font-family: arial;
+font-size: 16px;
+width: 90%;
+margin: 0.5rem auto;
+/* padding-bottom: 1rem; */
+ }
+.learnMoreButton{
+    /* border: 2px solid yellow; */
+    border: none;
+    position: relative;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 5px;
+    top: -0.3rem;
+    color: white;
+    background-color: #761e35;
+}
+@media(max-width: 900px){
+    .itineraryParentDiv{
+        /* border: 2px solid red; */
+        display: block;
+        flex-direction: column;
+        /* width: 100%; */
+    }
+    .tabSizer{
+        width: 100%;
+        height: 40rem;
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    }
+    .locationDesc{
+        padding: 1rem;  
+    }
+    .learnMoreButton{
+        margin-top: 2rem;
+    }
+}
+
+/* //////need to fix Learnmorebutton with media query for < 400px */
