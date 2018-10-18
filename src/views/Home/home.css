@@ -13,8 +13,137 @@
     background-image: url('../../images/bitmap.png');
     background-size: cover;
 }
+.pin {
+
+}
+
+.registerTripDiv{
+    height: 100%;
+    padding-bottom: 3rem;
+}
+
+.giftingRegister{
+    width: 55%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    text-align: center;
+    color: white;
+}
+.linkToTripRegistry{
+    border: none;
+    position: relative;
+    width: 8rem;
+    height: 2rem;
+    border-radius: 5px;
+    top: -0.3rem;
+    color: #761e35;
+    background-color: white;
+}
+/* /////////////////bridalParty-section////////////// */
+
+.homeBridalPartyDiv{
+    height: 72rem;
+}
+
+.fulWidthBridalPartyParent{
+    border: 2px solid red;
+    width: 100%;
+}
+.centeredBridalPartydiv{
+    border: 2px solid green;
+    width: 70%;
+    margin: 0 auto;
+}
+.immediateBridalPartyParent{
+    border: 2px solid purple;   
+    display: flex;
+    width: inherit;
+    justify-content: space-evenly; 
+    flex-direction: row;
+    margin: 3rem auto;
+    /* height: 13rem; */
+}
+.bridalPartyMemberCircle{
+    border: 2px solid blue;
+    border-radius: 50%;
+    display: block;
+    width: 10rem;
+    height: 10rem;
+}
+.bridalPartyMemberCircle img {
+    border-radius: 50%;
+    display: block;
+    width: 10rem;
+    height: 10rem;
+}
+.bridalPartyNameParent{
+    display: block;
+    /* margin: 19rem; */
+    position: relative;
+    /* top: 10rem; */
+}
+.nameDiv{
+    /* border: 2px solid green; */
+    position: relative;
+    display: block;
+    top: 75%;
+    font-size: 1rem;
+    text-align: center;
+    height: 2rem;
+}
+/* //////////////////////////////////////////////////// */
+@media(max-width: 1500px){
+.bridalPartyMemberCircle{
+    height: 7rem;
+    width: 7rem;
+}
+.bridalPartyMemberCircle img{
+    height: inherit;
+    width: inherit;
+}
+}
+
 @media(max-width: 900px){
     .homeItineraryDiv{
+       
         height: 137rem;   
     }
+    .registerTripDiv{
+        padding-bottom: 3rem;
+    }
+    .homeBridalPartyDiv{
+        /* border: 15px solid green; */
+        height: 214rem;
+    }
+    .centeredBridalPartydiv{
+        /* border: 2px solid green; */
+        width: 100%;
+        margin: 0 auto;
+    }
+    .immediateBridalPartyParent{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-evenly;  */
+    }
+    .bridalPartyMemberCircle{
+        border: 2px solid blue;
+        border-radius: 50%;
+        width: 8rem;
+        height: 8rem;
+    }
+    .bridalPartyMemberCircle img{
+        height: inherit;
+        width: inherit;
+    }
+    .nameDiv{
+        /* border: 2px solid green; */
+        display: block;
+        width: 18rem;
+        position: relative;
+        left: 30%;
+        top: -7rem;
+        /* margin: ; */
+    }
+    
+
 }

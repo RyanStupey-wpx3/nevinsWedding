@@ -12,3 +12,12 @@
 .rsvpTitle{
     text-align: center;
 }
+@media(max-width: 900px){
+    .rsvpParentDiv{
+        border: 2px solid blue;
+        width: inherit;
+        height: inherit;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
