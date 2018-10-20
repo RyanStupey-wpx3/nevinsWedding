@@ -27,9 +27,10 @@ export default class RsvpForm extends Component {
             alertNotification: "",
             showSubmitGuestButton: false,
             inputPlaceHolder: "enter your name",
-            deletePrimaryGuests: "",
+            deletePrimaryGuest: "",
             YesOrNoBool: false,
             deleteList: "",
+            pleaseEnterAValidName:"",
         }
         this.addGuest = this.addGuest.bind(this)
         this.removeGuest = this.removeGuest.bind(this)
@@ -70,9 +71,14 @@ export default class RsvpForm extends Component {
 
     addGuest(name){
         let pushGuest = this.state.addedGuests
-        console.log('pushGuest', pushGuest)
-       /// if there is no invite rsponse that means there hasnt been any response chosen
-        if (!this.state.addedGuests.length){
+        console.log('name.length', name.length)
+        if (name.length == 0 || isNaN(name) === false){
+            this.setState({
+                pleaseEnterAValidName: "please enter a valid name",
+                stagingGuest:'',
+            })
+            return null
+        } else if (!this.state.addedGuests.length){
             //pushGuest assign to New Array for state array
             pushGuest.push(name)
             console.log('name', name)
@@ -82,6 +88,7 @@ export default class RsvpForm extends Component {
                 //using addedGuest array for data, rendering under input through map
                 addedGuests: pushGuest,
                 showSubmitGuestButton: true,
+                pleaseEnterAValidName:"",
                 stagingGuest:"",
             })
             console.log('this.state.primaryGuest', this.state.primaryGuest)
@@ -90,6 +97,7 @@ export default class RsvpForm extends Component {
             this.setState({
                 addedGuests: pushGuest,
                 stagingGuest:"",
+                pleaseEnterAValidName:"",
             })
         }
         console.log('this.state.addedGuest', this.state.addedGuests)
@@ -120,17 +128,23 @@ export default class RsvpForm extends Component {
         //next define and write setGuest metho with dynamic object creation and property fill
     
     rsvpSubmitMethod(arr){
-        for(var i = 0; i <= arr.length-1; i++){
+        for(var i = 0;i <= arr.length-1; i++){
             let obj = new Person(arr[i], this.state.inviteResponse, this.state.primaryGuest)
             console.log('obj', obj)
-            axios.post('/api/guest', obj)
+            axios.post('/api/guests', obj)
             .then((resp) =>{
                 console.log(resp, "was sent back to front-end from db")
+                
             })
             .catch((err) => {
                 console.log('err', err)
             })
+            setTimeout(() =>{ return "";}, 1000)
         }
+        this.setState({
+            addedGuests: [],
+            showSubmitGuestButton: false,
+        })
     }
     responseSelect(event){
         this.setState({
@@ -161,7 +175,6 @@ export default class RsvpForm extends Component {
     }
 
     render() {
-        console.log('this.state.primaryGuest', this.state.primaryGuest) 
         const {rsvpTitle, rsvpVerbage, typeOfInput} = this.state
         let guestArray=[]
         if(this.state.addedGuests.length){
@@ -183,30 +196,47 @@ export default class RsvpForm extends Component {
                 <input type={typeOfInput.types.nameOfType} onChange={() => {this.determineInput(typeOfInput.types.nameOfType)}}/>
                     </form> */}
                     <form onSubmit={this.handleSubmit}>
-                        <input type="text" onChange={(e)=>{this.setState({stagingGuest: e.target.value}); console.log('this.state.stagingGuest', this.state.stagingGuest)}} placeholder={this.state.inputPlaceHolder} value={this.state.stagingGuest}/> 
+                        <input type="text" onChange={(e)=>{this.setState({stagingGuest: e.target.value})}} placeholder={this.state.inputPlaceHolder} value={this.state.stagingGuest}/> 
                         <button className="addguestButton" onClick={() => this.addGuest(this.state.stagingGuest)}>add guest</button>
                         {this.state.YesOrNoBool && 
                                     <div>
-                                        <div> {this.state.deletePrimaryGuests} </div>
+                                        <div> {this.state.deletePrimaryGuest} </div>
                                             <input type="radio" onChange={this.deletePrimaryGuest} value="yes" checked={this.state.deleteList === 'yes'}/> Yes 
                                             <input type="radio" onChange={this.deletePrimaryGuest} value="nevermind" checked={this.state.deleteList === 'nevermind'}/> Nevermind
                                             <input type="submit" onClick={() => this.deleteAllFromGuests()} value="reset"/>
                                     </div>
                         }
-                            <div className="guestsAdded">
-                            <ul>
-                                {guestArray}
-                            </ul>
-                            </div>
+                        <div>{this.state.pleaseEnterAValidName}</div>
                         <input type="radio" name="gender"onChange={this.responseSelect} onClick={() => {console.log('hit 1')}} value="Going" checked={this.state.inviteResponse === 'Going'}/> Yes 
                         <input type="radio" name="gender"onChange={this.responseSelect} value="Maybe" checked={this.state.inviteResponse === 'Maybe'}/> Maybe
                         <input type="radio" name="gender"onChange={this.responseSelect} value="No, Sorry" checked={this.state.inviteResponse === 'No, Sorry'}/> Sorry, no
                         
                         {this.state.showSubmitGuestButton && <button onClick={() => this.rsvpSubmitMethod(this.state.addedGuests)}>submit guests</button>}
                     </form>
+                    <div className="guestsAdded">
+                            <ul>
+                                {guestArray}
+                            </ul>
+                            </div>
                 </div>
             </div>
         );
         }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//next need to hide submit button if addedGuests Array has length === 0
+//then style addedGuests & x box
+//

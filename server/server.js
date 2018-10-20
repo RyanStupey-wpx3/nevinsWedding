@@ -26,18 +26,22 @@ app.get('/api/guests', (req, res, next) => {
     })
 })
 
-app.post(('/api/guests', (req, res) => {
+app.post('/api/guests', (req, res) => {
     const dbInstance = req.app.get('db')
-    const person = req.body
-
-    dbInstance.post_guest([person])
+    const {name, status, primaryGuest} = req.body
+    const guest_name = name;
+    const guest_status = status;
+    const primary_guest = primaryGuest
+    console.log('req.body', req.body)
+    console.log('guest_name, guest_status, primary_guest', guest_name, guest_status, primary_guest)
+    dbInstance.post_guest([guest_name, guest_status, primary_guest])
     .then((resp) => {
         res.status(200).send("db entry confirmed")
     })
     .catch((err) => {
-        res.status(500).send('did not enter db', err)
+        res.status(500).send('did not enter db')
     })
-}))
+})
 
 const port = 3535;
 
