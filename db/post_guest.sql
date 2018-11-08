@@ -1,2 +1,2 @@
-INSERT INTO guests (guest_name, guest_status, primary_guest)
+INSERT INTO guests
 values($1,$2,$3);

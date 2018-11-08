@@ -25,24 +25,29 @@ app.get('/api/guests', (req, res, next) => {
         console.log('err', err)
     })
 })
+<<<<<<< HEAD
 console.log('post guests')
 app.post('/api/guests', (req, res) => {
+=======
+
+app.post(('/api/guests', (req, res) => {
+>>>>>>> parent of 523896c... further rsvp functionality and validation
     const dbInstance = req.app.get('db')
-    const {name, status, primaryGuest} = req.body
-    const guest_name = name;
-    const guest_status = status;
-    const primary_guest = primaryGuest
-    console.log('req.body', req.body)
-    console.log('guest_name, guest_status, primary_guest', guest_name, guest_status, primary_guest)
-    dbInstance.post_guest([guest_name, guest_status, primary_guest])
+    const person = req.body
+
+    dbInstance.post_guest([person])
     .then((resp) => {
         res.status(200).send("db entry confirmed")
     })
     .catch((err) => {
-        res.status(500).send('did not enter db')
+        res.status(500).send('did not enter db', err)
     })
+<<<<<<< HEAD
 })
 console.log('process.env.DB_CONNECTION_STRING', process.env.DB_CONNECTION_STRING)
+=======
+}))
+>>>>>>> parent of 523896c... further rsvp functionality and validation
 
 const port = 3535;
 
