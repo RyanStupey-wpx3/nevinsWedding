@@ -35,6 +35,10 @@
     margin: 0 auto;
     border-bottom: 1px solid black;
 }
+.rehearsalDinnerH1{
+    font-size: 2.5rem;
+    padding: 0.3rem;
+}
 
 .dateAndTime{
     margin-top: 1rem;
@@ -87,3 +91,12 @@ margin: 0.5rem auto;
 }
 
 /* //////need to fix Learnmorebutton with media query for < 400px */
+
+/* develope iterative process feature branch */
+/* continued integration/ deployment (teamCity, Jenkins) */
+
+/* google dev meet */
+
+/* surf incubators */
+
+/* sencha Blog */

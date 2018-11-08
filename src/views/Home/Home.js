@@ -4,13 +4,15 @@ import '../../App.css'
 import RsvpForm from '../../ComptsWIthState/RsvpForm/RsvpForm';
 import Itinerary from "../Itinerary/Itinerary";
 import SimpleMap from '../../ComptsWIthState/SimpleMap/SimpleMap';
+import {Link} from 'react-router-dom';
+import Countdown from "../../ComptsWIthState/CountDown/CountDown"
 
 export default class Home extends Component {
     render() {
         return (
             <div className="homeComponentDiv">
                 <div className="homeParentComponent">
-                    <div className="logoHeaderDiv"> <div style={{float: "right"}} className="linkButtons"><button className="linkButton ItineraryView">Itinerary</button><button className="linkButton WhereToStayView">Where to stay</button></div></div>
+                    <div className="logoHeaderDiv"> <div style={{float: "right"}} className="links"><Link to="/itinerary"><button className="linkButton ItineraryView">Itinerary</button></Link><Link to="/whereToStay"><button className="linkButton WhereToStayView">Where to stay</button></Link></div></div>
                     <div className="sizer homeHeroDiv"></div>
 
                     <div className="sizer white homeInviteFormDiv">
@@ -32,6 +34,7 @@ export default class Home extends Component {
                     <div className="sizer white homeBridalPartyDiv">
                         <div className="fulWidthBridalPartyParent groomesmen-section">
                             <div className="centeredBridalPartydiv">
+                                        <div className="bridalPartySectionTitle"><h2>groomesmen</h2></div>
                                 <div className="immediateBridalPartyParent">
                                     <div>
                                         <div className="bridalPartyMemberCircle"><img src={require("../../images/lamp1.png")}/></div>
@@ -73,6 +76,7 @@ export default class Home extends Component {
                         </div>
                         <div className="fulWidthBridalPartyParent bridesmaides-section">
                             <div className="centeredBridalPartydiv">
+                                        <div className="bridalPartySectionTitle"><h2>bridesmaides</h2></div>
                                 <div className="immediateBridalPartyParent">
                                     <div>
                                         <div className="bridalPartyMemberCircle">{/* <img src={require("./")}/> */}</div>
@@ -114,8 +118,7 @@ export default class Home extends Component {
                         </div>
                     </div>
                     <div className="sizer red "> 
-                    <span>
-                    </span>
+                        {/* <Countdown/> */}
                     </div>
                 </div>
             </div>

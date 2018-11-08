@@ -9,6 +9,17 @@
     border: 2px solid red;
 }
 
+.links {
+    /* border: 2px solid red; */
+    position: relative;
+    right: 3rem;
+    top: 2.5rem;
+}
+.linkButton {
+    margin: 0.5rem;
+    width: 10rem;
+}
+
 .homeHeroDiv{
     background-image: url('../../images/bitmap.png');
     background-size: cover;
@@ -54,6 +65,10 @@
     width: 70%;
     margin: 0 auto;
 }
+.bridalPartySectionTitle{
+    width: 100%;
+    text-align: center;
+}
 .immediateBridalPartyParent{
     border: 2px solid purple;   
     display: flex;
@@ -90,6 +105,10 @@
     font-size: 1rem;
     text-align: center;
     height: 2rem;
+}
+
+.countdownParent{
+    border: 2px solid yellow;
 }
 /* //////////////////////////////////////////////////// */
 @media(max-width: 1500px){

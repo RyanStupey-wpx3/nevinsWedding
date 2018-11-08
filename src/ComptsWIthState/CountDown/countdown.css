@@ -1,0 +1,61 @@
+.timerParent {
+    /* border: 2px solid green; */
+}
+.timerH2 {
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65%;
+    margin: 0 auto;
+    padding-top: 5rem;
+    font-size: 2rem;
+    /* margin: 0 auto; */
+}
+.timerH2 h2 {
+    /* border: 2px solid violet; */
+    padding: 1rem;
+}
+.coundownLabelsParent{
+    /* border: 2px solid orange; */
+    display: flex;
+    flex-direction: row;
+    width: 43rem;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    top: -3rem;
+    /* justify-content: space-between; */
+}
+.coundownLabels{
+    /* border: 2px solid blue; */
+    position: relative;
+    top: -3rem;
+    /* left: 20%; */
+}
+.daysNumber{}
+.days {
+    position: relative;
+    left: 23%;
+}
+.hoursNumber{}
+.hours {
+    position: relative;
+    left: 6%;
+}
+.minuteNumber{
+    position: relative;
+    left: 1rem;
+}
+.minutes {
+    position: relative;
+    /* left: 4%; */
+}
+.secondNumber{
+    position: relative;
+    left: 1rem;
+}
+.seconds {
+    /* position: relative;
+    left: 55%; */
+}

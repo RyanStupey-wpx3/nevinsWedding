@@ -8,7 +8,7 @@ export default class Itinerary extends Component {
                 <div className="itineraryParentDiv">
                     <div className="tabSizer white location1">
                         <img className="locationImage locationIm1" src={require("../../images/lamp1.png")}/>
-                        <h1>Rehearsal Dinner</h1>
+                        <h1 className="rehearsalDinnerH1">Rehearsal Dinner</h1>
                         <div className="dateAndTime">6:00PM on Friday September 27th 2019 </div>
                         <div className="location">Location TBD</div>
                         <p className="locationDesc locationD1">

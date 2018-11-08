@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import axios from 'axios';
+import './admin.css'
 
 export default class Admin extends Component {
     constructor(props){
@@ -25,12 +26,34 @@ export default class Admin extends Component {
         let displayGuestArray;
         if (this.state.guestArray.length){
             displayGuestArray = this.state.guestArray.map((elem) =>{
-               return( <div>
+                const status = elem.guest_status.toLowerCase();
+                if(status === "going"){
+                    return (
+                    <div className="goingGreen guestDiv">
+                        <hr/>
+                        <div>{elem.guest_name}</div>
+                        <div>{elem.guest_status}</div>
+                        <hr/>
+                    </div>
+                    )
+                } else if(status === "no, sorry" || status === "not going"){
+               return(
+                   <div className="deadRed guestDiv">
                     <hr/>
                     <div>{elem.guest_name}</div>
                     <div>{elem.guest_status}</div>
                     <hr/>
                 </div>)
+                } else {
+                    return (
+                        <div className="mellowYellow guestDiv">
+                        <hr/>
+                        <div>{elem.guest_name}</div>
+                        <div>{elem.guest_status}</div>
+                        <hr/>
+                        </div>
+                    )
+                }
             })
     } else {
         console.log('no length in guest Array')

@@ -20,6 +20,8 @@ export default class RsvpForm extends Component {
             rsvpTitle, 
             rsvpVerbage, 
             typeOfInput,
+            primaryGuest:"",
+            primaryGuestClassName:"primaryGClass",
             addedGuests:[],
             stagingGuest: "",
             finalGuestArray:[],
@@ -129,7 +131,9 @@ export default class RsvpForm extends Component {
     
     rsvpSubmitMethod(arr){
         for(var i = 0;i <= arr.length-1; i++){
-            let obj = new Person(arr[i], this.state.inviteResponse, this.state.primaryGuest)
+            // make lowercase
+           var beta = this.state.inviteResponse.toLowerCase()
+            let obj = new Person(arr[i], beta, this.state.primaryGuest)
             console.log('obj', obj)
             axios.post('/api/guests', obj)
             .then((resp) =>{
@@ -139,8 +143,9 @@ export default class RsvpForm extends Component {
             .catch((err) => {
                 console.log('err', err)
             })
-            setTimeout(() =>{ return "";}, 1000)
+            // setTimeout(() =>{ return "";}, 1000)
         }
+        console.log('after loop')
         this.setState({
             addedGuests: [],
             showSubmitGuestButton: false,
@@ -180,7 +185,7 @@ export default class RsvpForm extends Component {
         if(this.state.addedGuests.length){
             guestArray = this.state.addedGuests.map((elem, ind) => {
             for(var i = 0; i < this.state.addedGuests.length; i++){
-                return (<li  className="guestLi">{elem} <div onClick={() => this.removeGuest(ind, elem)} className="xDiv">x</div></li>);
+                return (<li  className="guestLi">{elem} <div onClick={() => this.removeGuest(ind, elem)} className="xDiv">X</div></li>);
                 }
             })
         } else {
@@ -214,7 +219,7 @@ export default class RsvpForm extends Component {
                         {this.state.showSubmitGuestButton && <button onClick={() => this.rsvpSubmitMethod(this.state.addedGuests)}>submit guests</button>}
                     </form>
                     <div className="guestsAdded">
-                            <ul>
+                            <ul className="guestArrayUl">
                                 {guestArray}
                             </ul>
                             </div>

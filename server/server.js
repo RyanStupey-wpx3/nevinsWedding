@@ -13,19 +13,19 @@ app.use(bodyParser.json());
 massive(process.env.DB_CONNECTION_STRING)
 .then(dbInstance => app.set('db', dbInstance));
 
+console.log('get guests')
 app.get('/api/guests', (req, res, next) => {
     const dbInstance = req.app.get('db')
-
+    
     dbInstance.get_guests()
     .then((resp) => {
         res.status(200).send(resp)
     })
     .catch((err) => {
-        res.status(500).send(err)
         console.log('err', err)
     })
 })
-
+console.log('post guests')
 app.post('/api/guests', (req, res) => {
     const dbInstance = req.app.get('db')
     const {name, status, primaryGuest} = req.body
@@ -42,6 +42,7 @@ app.post('/api/guests', (req, res) => {
         res.status(500).send('did not enter db')
     })
 })
+console.log('process.env.DB_CONNECTION_STRING', process.env.DB_CONNECTION_STRING)
 
 const port = 3535;
 
