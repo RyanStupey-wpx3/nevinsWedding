@@ -26,8 +26,13 @@ app.get('/api/guests', (req, res, next) => {
     })
 })
 <<<<<<< HEAD
+<<<<<<< HEAD
 console.log('post guests')
 app.post('/api/guests', (req, res) => {
+=======
+
+app.post(('/api/guests', (req, res) => {
+>>>>>>> parent of 523896c... further rsvp functionality and validation
 =======
 
 app.post(('/api/guests', (req, res) => {
@@ -43,8 +48,12 @@ app.post(('/api/guests', (req, res) => {
         res.status(500).send('did not enter db', err)
     })
 <<<<<<< HEAD
+<<<<<<< HEAD
 })
 console.log('process.env.DB_CONNECTION_STRING', process.env.DB_CONNECTION_STRING)
+=======
+}))
+>>>>>>> parent of 523896c... further rsvp functionality and validation
 =======
 }))
 >>>>>>> parent of 523896c... further rsvp functionality and validation

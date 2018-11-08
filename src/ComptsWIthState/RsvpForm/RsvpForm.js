@@ -122,10 +122,16 @@ export default class RsvpForm extends Component {
         //next define and write setGuest metho with dynamic object creation and property fill
     
     rsvpSubmitMethod(arr){
+<<<<<<< HEAD
         for(var i = 0;i <= arr.length-1; i++){
             // make lowercase
            var beta = this.state.inviteResponse.toLowerCase()
             let obj = new Person(arr[i], beta, this.state.primaryGuest)
+=======
+        for(var i = 0; i <= arr.length-1; i++){
+            let obj = new Person(arr[i], this.state.inviteResponse, this.state.primaryGuest)
+            console.log('obj', obj)
+>>>>>>> parent of 523896c... further rsvp functionality and validation
             axios.post('/api/guest', obj)
             .then((resp) =>{
                 console.log(resp, "was sent back to front-end from db")
@@ -207,11 +213,14 @@ export default class RsvpForm extends Component {
                         
                         {this.state.showSubmitGuestButton && <button onClick={() => this.rsvpSubmitMethod(this.state.addedGuests)}>submit guests</button>}
                     </form>
+<<<<<<< HEAD
                     <div className="guestsAdded">
                             <ul className="guestArrayUl">
                                 {guestArray}
                             </ul>
                             </div>
+=======
+>>>>>>> parent of 523896c... further rsvp functionality and validation
                 </div>
             </div>
         );
