@@ -6,7 +6,7 @@
 .logoHeaderDiv{
     width: 100%;
     height: 7rem;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 .links {
@@ -31,6 +31,8 @@
 .registerTripDiv{
     height: 100%;
     padding-bottom: 3rem;
+    position: relative;
+    top: -10rem;
 }
 
 .giftingRegister{
@@ -50,18 +52,32 @@
     color: #761e35;
     background-color: white;
 }
+.homeItineraryDiv{
+       position: relative;
+       top: -10rem;
+}
+.homeMapDiv {
+    position: relative;
+    top: -10rem;
+}
+.homeCountDownH1{
+    padding-top: 3rem;
+    text-align: center;
+}
 /* /////////////////bridalParty-section////////////// */
 
 .homeBridalPartyDiv{
+    position: relative;
+    top: -10rem;
     height: 72rem;
 }
 
 .fulWidthBridalPartyParent{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 100%;
 }
 .centeredBridalPartydiv{
-    border: 2px solid green;
+    /* border: 2px solid green; */
     width: 70%;
     margin: 0 auto;
 }
@@ -70,7 +86,7 @@
     text-align: center;
 }
 .immediateBridalPartyParent{
-    border: 2px solid purple;   
+    /* border: 2px solid purple;    */
     display: flex;
     width: inherit;
     justify-content: space-evenly; 
@@ -108,8 +124,29 @@
 }
 
 .countdownParent{
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
+    height: 25rem;
+    position: relative;
+    /* top: -3rem; */
 }
+.weddingInfoParent .content{
+    /* font-family: Avenir; */
+    position: relative;
+    top: 17rem;
+    text-align: center;
+    color: white;
+}
+.weddingInfoDiv{
+    position: relative;
+    top: 27rem;
+    height: 10rem;
+    margin: 0 auto;
+    width: 60%;
+    opacity: 0.5;
+    background-color: black;
+    border: 1px solid red;
+}
+/*  cant  figure out css issues */
 /* //////////////////////////////////////////////////// */
 @media(max-width: 1500px){
 .bridalPartyMemberCircle{

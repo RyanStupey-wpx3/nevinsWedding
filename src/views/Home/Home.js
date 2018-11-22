@@ -13,7 +13,16 @@ export default class Home extends Component {
             <div className="homeComponentDiv">
                 <div className="homeParentComponent">
                     <div className="logoHeaderDiv"> <div style={{float: "right"}} className="links"><Link to="/itinerary"><button className="linkButton ItineraryView">Itinerary</button></Link><Link to="/whereToStay"><button className="linkButton WhereToStayView">Where to stay</button></Link></div></div>
-                    <div className="sizer homeHeroDiv"></div>
+                    <div className="sizer homeHeroDiv">
+                        <div className="weddingInfoParent">
+                        <div className="weddingInfoDiv">
+                        </div>
+                            <div className="content">
+                            <h1> A Nevins Wedding </h1>
+                                <h3>SEPTEMBER 28TH 2019 AT THE PICKERING BARN IN ISSAQUAH, WA</h3> 
+                            </div>
+                            </div>
+                    </div>
 
                     <div className="sizer white homeInviteFormDiv">
                         <RsvpForm rsvpTitle={"R.S.V.P"} rsvpVerbage={"Let us know if you plan on attending the wedding celebration. If you are not sure if you can attend yet simply select Want to come, but not sure yet and let us know when you make your decision. Please only add guests that have been invited unless your invitation has a plus one on it."}/>
@@ -117,8 +126,9 @@ export default class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="sizer red "> 
-                        {/* <Countdown/> */}
+                    <div className="sizer red countdownParent"> 
+                        <h1 className="homeCountDownH1">Countdown to wedding</h1>
+                        <Countdown/>
                     </div>
                 </div>
             </div>

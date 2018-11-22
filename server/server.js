@@ -1,3 +1,4 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const massive = require('massive');
@@ -26,21 +27,24 @@ app.get('/api/guests', (req, res, next) => {
     })
 })
 
-app.post(('/api/guests', (req, res) => {
+app.post('/api/guests', (req, res) => {
     const dbInstance = req.app.get('db')
-    const person = req.body
+    console.log(req.body)
+    const {status, primaryGuest, guestNames}= req.body
 
-    dbInstance.post_guest([person])
+    dbInstance.post_guest([status, primaryGuest, guestNames])
     .then((resp) => {
         res.status(200).send("db entry confirmed")
     })
     .catch((err) => {
-        res.status(500).send('did not enter db', err)
+        console.log("err", err)
+        res.status(500).send('did not enter db')
     })
-}))
+})
 
 const port = 3535;
 
 
 
 app.listen(port, () => {console.log(`app is listening on port port`)})
+

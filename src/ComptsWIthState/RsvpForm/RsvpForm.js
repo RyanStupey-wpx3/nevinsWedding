@@ -3,10 +3,10 @@ import './rsvpForm.css';
 import axios from 'axios';
 
 let Person = class {
-    constructor(name, status, primaryGuest) {
-      this.name = name;
+    constructor(status, primaryGuest, guestNames) {
+        this.primaryGuest = primaryGuest
       this.status = status;
-      this.primaryGuest = primaryGuest
+      this.guestNames = guestNames;
     }
   };
 
@@ -72,9 +72,14 @@ export default class RsvpForm extends Component {
 
     addGuest(name){
         let pushGuest = this.state.addedGuests
-        console.log('pushGuest', pushGuest)
-       /// if there is no invite rsponse that means there hasnt been any response chosen
-        if (!this.state.addedGuests.length){
+        console.log('name.length', name.length)
+        if (name.length == 0 || isNaN(name) === false){
+            this.setState({
+                pleaseEnterAValidName: "please enter a valid name",
+                stagingGuest:'',
+            })
+            return null
+        } else if (!this.state.addedGuests.length){
             //pushGuest assign to New Array for state array
             pushGuest.push(name)
             console.log('name', name)
@@ -84,6 +89,7 @@ export default class RsvpForm extends Component {
                 //using addedGuest array for data, rendering under input through map
                 addedGuests: pushGuest,
                 showSubmitGuestButton: true,
+                pleaseEnterAValidName:"",
                 stagingGuest:"",
             })
             console.log('this.state.primaryGuest', this.state.primaryGuest)
@@ -92,6 +98,7 @@ export default class RsvpForm extends Component {
             this.setState({
                 addedGuests: pushGuest,
                 stagingGuest:"",
+                pleaseEnterAValidName:"",
             })
         }
         console.log('this.state.addedGuest', this.state.addedGuests)
@@ -122,30 +129,16 @@ export default class RsvpForm extends Component {
         //next define and write setGuest metho with dynamic object creation and property fill
     
     rsvpSubmitMethod(arr){
-<<<<<<< HEAD
-<<<<<<< HEAD
-        for(var i = 0;i <= arr.length-1; i++){
-            // make lowercase
-           var beta = this.state.inviteResponse.toLowerCase()
-            let obj = new Person(arr[i], beta, this.state.primaryGuest)
-=======
-        for(var i = 0; i <= arr.length-1; i++){
-            let obj = new Person(arr[i], this.state.inviteResponse, this.state.primaryGuest)
+            let obj = new Person( this.state.inviteResponse, this.state.primaryGuest, arr)
             console.log('obj', obj)
->>>>>>> parent of 523896c... further rsvp functionality and validation
-=======
-        for(var i = 0; i <= arr.length-1; i++){
-            let obj = new Person(arr[i], this.state.inviteResponse, this.state.primaryGuest)
-            console.log('obj', obj)
->>>>>>> parent of 523896c... further rsvp functionality and validation
-            axios.post('/api/guest', obj)
+            axios.post('/api/guests', obj)
             .then((resp) =>{
                 console.log(resp, "was sent back to front-end from db")
             })
             .catch((err) => {
                 console.log('err', err)
             })
-        }
+        
     }
     responseSelect(event){
         this.setState({
@@ -208,28 +201,23 @@ export default class RsvpForm extends Component {
                                             <input type="submit" onClick={() => this.deleteAllFromGuests()} value="reset"/>
                                     </div>
                         }
-                            <div className="guestsAdded">
+                            {/* <div className="guestsAdded">
                             <ul>
                                 {guestArray}
                             </ul>
-                            </div>
+                            </div> */}
+                        <div>{this.state.pleaseEnterAValidName}</div>
                         <input type="radio" name="gender"onChange={this.responseSelect} onClick={() => {console.log('hit 1')}} value="Going" checked={this.state.inviteResponse === 'Going'}/> Yes 
                         <input type="radio" name="gender"onChange={this.responseSelect} value="Maybe" checked={this.state.inviteResponse === 'Maybe'}/> Maybe
                         <input type="radio" name="gender"onChange={this.responseSelect} value="No, Sorry" checked={this.state.inviteResponse === 'No, Sorry'}/> Sorry, no
                         
                         {this.state.showSubmitGuestButton && <button onClick={() => this.rsvpSubmitMethod(this.state.addedGuests)}>submit guests</button>}
                     </form>
-<<<<<<< HEAD
-<<<<<<< HEAD
                     <div className="guestsAdded">
                             <ul className="guestArrayUl">
                                 {guestArray}
                             </ul>
                             </div>
-=======
->>>>>>> parent of 523896c... further rsvp functionality and validation
-=======
->>>>>>> parent of 523896c... further rsvp functionality and validation
                 </div>
             </div>
         );

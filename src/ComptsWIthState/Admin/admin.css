@@ -1,12 +1,64 @@
 .goingGreen{
-    background-color: green;
+    border: 2px solid green;
+    background-color: #71DD71;
+    border-radius: 5px;
 }
 .deadRed {
-    background-color: red;
+    border: 2px solid red;
+    background-color: #FF6E6E;
+    border-radius: 5px;
 }
 .mellowYellow{
-    background-color:yellow;
+    border: 2px solid yellow;
+    background-color: #FFFFBE;
+    border-radius: 5px;
 }
+
+.primaryGuestGreen{
+    padding: 1rem;
+    background-color: green;
+    color: white;
+    font-size: 1.5rem;
+    color: black;
+    border-radius: 5px;
+}
+.primaryGuestYellow{
+    padding: 1rem;
+    background-color: yellow;
+    color: white;
+    font-size: 1.5rem;
+    color: black;
+    border-radius: 5px;
+}
+.primaryGuestRed{
+    padding: 1rem;
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    color: black;
+    border-radius: 5px;
+
+}
+.secondaryGuest{
+    /* background-color: black; */
+    margin: 1rem;
+    padding: 1rem;
+    width: 20rem;
+    /* opacity: 0.5; */
+    color: black;
+    text-align: right;
+    padding-right: 10px;
+    position: relative;
+    left: 23%;
+    font-size:1.5rem;
+}
+.guestNameText{
+    opacity: 1;
+    
+}
+
 .guestDiv{
     width: 30rem;
+    padding-bottom: 1rem;
+    margin-left: 0.5rem;
 }

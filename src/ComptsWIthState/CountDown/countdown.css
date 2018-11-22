@@ -8,7 +8,7 @@
     justify-content: space-between;
     width: 65%;
     margin: 0 auto;
-    padding-top: 5rem;
+    /* padding-top: 5rem; */
     font-size: 2rem;
     /* margin: 0 auto; */
 }
@@ -17,20 +17,20 @@
     padding: 1rem;
 }
 .coundownLabelsParent{
-    /* border: 2px solid orange; */
+    /* border: 2px solid purple; */
     display: flex;
     flex-direction: row;
     width: 43rem;
     margin: 0 auto;
     padding: 0;
     position: relative;
-    top: -3rem;
+    /* top: -2rem; */
     /* justify-content: space-between; */
 }
 .coundownLabels{
     /* border: 2px solid blue; */
     position: relative;
-    top: -3rem;
+    top: -4rem;
     /* left: 20%; */
 }
 .daysNumber{}
@@ -41,7 +41,7 @@
 .hoursNumber{}
 .hours {
     position: relative;
-    left: 6%;
+    left: -0.5rem;
 }
 .minuteNumber{
     position: relative;
