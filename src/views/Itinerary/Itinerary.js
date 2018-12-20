@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import "./itinerary.css";
+import {Link} from "react-router-dom";
 
 export default class Itinerary extends Component {
     render() {
@@ -14,7 +15,7 @@ export default class Itinerary extends Component {
                         <p className="locationDesc locationD1">
                         Soufflé wafer sweet caramels liquorice. Sweet cotton candy toffee sesame snaps croissant cake. Fruitcake jelly-o candy canes pie chocolate bar. Macaroon tootsie roll biscuit tart lollipop marzipan chocolate bar. Jujubes dragée candy canes.
                         </p>
-                        <button className="learnMoreButton">Learn More</button>
+                        <Link to="/itineraryPage"><button className="learnMoreButton">Learn More</button></Link>
                     </div>
                     <div className="tabSizer white location2">
                         <img className="locationImage locationIm2" src={require("../../images/plate1.png")}/>
@@ -24,7 +25,7 @@ export default class Itinerary extends Component {
                         <p className="locationDesc locationD2">
                         Soufflé wafer sweet caramels liquorice. Sweet cotton candy toffee sesame snaps croissant cake. Fruitcake jelly-o candy canes pie chocolate bar. Macaroon tootsie roll biscuit tart lollipop marzipan chocolate bar. Jujubes dragée candy canes.
                         </p>
-                        <button className="learnMoreButton">Learn More</button>
+                        <Link to="/itineraryPage"><button className="learnMoreButton">Learn More</button></Link>
                     </div>
                     <div className="tabSizer white location3">
                         <img className="locationImage locationIm3" src={require("../../images/lights.png")}/>
@@ -34,7 +35,7 @@ export default class Itinerary extends Component {
                         <p className="locationDesc locationD3">
                         Soufflé wafer sweet caramels liquorice. Sweet cotton candy toffee sesame snaps croissant cake. Fruitcake jelly-o candy canes pie chocolate bar. Macaroon tootsie roll biscuit tart lollipop marzipan chocolate bar. Jujubes dragée candy canes.
                         </p>
-                        <button className="learnMoreButton">Learn More</button>
+                        <Link to="/itineraryPage"><button className="learnMoreButton">Learn More</button></Link>
                     </div>
                 </div>
             </div>

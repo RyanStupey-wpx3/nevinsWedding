@@ -31,6 +31,10 @@
    
 }
 .tabSizer h1 {
+    font-size: 2rem;
+    position: relative;
+    top: -0.5rem;
+    padding: 0;
     width: 80%;
     margin: 0 auto;
     border-bottom: 1px solid black;
@@ -41,19 +45,19 @@
 }
 
 .dateAndTime{
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     font-family: arial;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
 }
 .location{
     font-family: arial;
-    font-size: 18px;
+    font-size: 14px;
 }
 .locationDesc{
 /* border: 2px solid red; */
  font-family: arial;
-font-size: 16px;
+font-size: 14px;
 width: 90%;
 margin: 0.5rem auto;
 /* padding-bottom: 1rem; */
@@ -67,9 +71,31 @@ margin: 0.5rem auto;
     border-radius: 5px;
     top: -0.3rem;
     color: white;
-    background-color: #761e35;
+    background-color: hsl(344, 59%, 29%);
 }
-@media(max-width: 900px){
+
+@media(max-width: 1500px){
+    .itineraryParentDiv{
+        /* border: 2px solid red; */
+        /* display: block;
+        flex-direction: ; */
+        /* width: 100%; */
+    }
+    .tabSizer{
+        width: 35%;
+        height: 30rem;
+        margin: 0.5rem;
+        /* margin-top: 3rem; */
+        /* margin-bottom: 3rem; */
+    }
+    .locationDesc{
+        /* padding: 1rem;   */
+    }
+    .learnMoreButton{
+        /* margin-top: 1rem; */
+    }
+}
+@media(max-width: 1100px){
     .itineraryParentDiv{
         /* border: 2px solid red; */
         display: block;
@@ -78,7 +104,7 @@ margin: 0.5rem auto;
     }
     .tabSizer{
         width: 100%;
-        height: 40rem;
+        height: 35rem;
         margin-top: 3rem;
         margin-bottom: 3rem;
     }
@@ -89,14 +115,3 @@ margin: 0.5rem auto;
         /* margin-top: 1rem; */
     }
 }
-
-/* //////need to fix Learnmorebutton with media query for < 400px */
-
-/* develope iterative process feature branch */
-/* continued integration/ deployment (teamCity, Jenkins) */
-
-/* google dev meet */
-
-/* surf incubators */
-
-/* sencha Blog */

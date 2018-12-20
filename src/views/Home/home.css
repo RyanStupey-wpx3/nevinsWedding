@@ -3,22 +3,6 @@
     width: 100%;
 } */
 
-.logoHeaderDiv{
-    width: 100%;
-    height: 7rem;
-    /* border: 2px solid red; */
-}
-
-.links {
-    /* border: 2px solid red; */
-    position: relative;
-    right: 3rem;
-    top: 2.5rem;
-}
-.linkButton {
-    margin: 0.5rem;
-    width: 10rem;
-}
 
 .homeHeroDiv{
     background-image: url('../../images/bitmap.png');
@@ -42,19 +26,34 @@
     text-align: center;
     color: white;
 }
+.giftRegistryDesc{
+    border: 2px solid red;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    line-height: 2;
+    width: 85%;
+    font-weight: 100;
+    font-size: 12px
+}
 .linkToTripRegistry{
     border: none;
     position: relative;
-    width: 8rem;
+    width: 11rem;
     height: 2rem;
     border-radius: 5px;
     top: -0.3rem;
+    font-weight: 800;
     color: #761e35;
     background-color: white;
 }
 .homeItineraryDiv{
        position: relative;
        top: -10rem;
+}
+@media(max-width: 1100px){
+    .homeItineraryDiv{
+        height: 123rem;   
+    }
 }
 .homeMapDiv {
     position: relative;
@@ -63,6 +62,14 @@
 .homeCountDownH1{
     padding-top: 3rem;
     text-align: center;
+}
+@media(max-width: 700px){
+    .giftingRegister{
+        width: 100%;
+    }
+    .giftRegistryDesc{
+        width: 100%;
+    }
 }
 /* /////////////////bridalParty-section////////////// */
 
@@ -95,7 +102,8 @@
     /* height: 13rem; */
 }
 .bridalPartyMemberCircle{
-    border: 2px solid blue;
+    border: 1px solid darkgray;
+    background-color: gray;
     border-radius: 50%;
     display: block;
     width: 10rem;
@@ -131,10 +139,14 @@
 }
 .weddingInfoParent .content{
     /* font-family: Avenir; */
+    font-size: 14px;
     position: relative;
     top: 17rem;
     text-align: center;
     color: white;
+}
+.content h1, h3{
+    font-weight: lighter;
 }
 .weddingInfoDiv{
     position: relative;
@@ -144,7 +156,15 @@
     width: 60%;
     opacity: 0.5;
     background-color: black;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+@media(max-width: 900px){
+     .content h3{
+        width: 40%;
+        font-size: 12px;
+        position: relative;
+        left: 30%;
+    }
 }
 /*  cant  figure out css issues */
 /* //////////////////////////////////////////////////// */
@@ -160,10 +180,7 @@
 }
 
 @media(max-width: 900px){
-    .homeItineraryDiv{
-       
-        height: 137rem;   
-    }
+    
     .registerTripDiv{
         padding-bottom: 3rem;
     }
@@ -182,7 +199,7 @@
         /* justify-content: space-evenly;  */
     }
     .bridalPartyMemberCircle{
-        border: 2px solid blue;
+        /* border: 2px solid blue; */
         border-radius: 50%;
         width: 8rem;
         height: 8rem;

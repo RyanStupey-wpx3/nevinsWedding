@@ -26,12 +26,16 @@ export default class Admin extends Component {
         console.log('this.state.guestArray', this.state.guestArray)
         let displayGuestArray;
         let displaySubGuests;
+        let countGoing = 0;
+        let countNotGoing;
+        let countMaybe;
         if (this.state.guestArray.length){
             
             displayGuestArray = this.state.guestArray.map((elem) =>{
                console.log('elem.guest_names', elem.guest_names)
                 const status = elem.guest_status.toLowerCase();
                 if(status === "going"){
+                    countGoing = elem.guest_names.length
                     return (
                     <div className="guestDiv">
                         <div className="primaryGuestGreen"> {elem.primary_guest} - {elem.guest_status}</div>
@@ -43,6 +47,7 @@ export default class Admin extends Component {
                     </div>
                     )
                 } else if(status === "no, sorry" || status === "not going"){
+                    countNotGoing = elem.guest_names.length
                return(
                    <div className="guestDiv">
                         <div className="primaryGuestRed"> {elem.primary_guest} - {elem.guest_status}</div>
@@ -54,6 +59,7 @@ export default class Admin extends Component {
                         </div>
                 </div>)
                 } else {
+                    countMaybe = elem.guest_names.length
                     return (
                         <div className="guestDiv">
                         <div className="primaryGuestYellow"> {elem.primary_guest} - {elem.guest_status}</div>
@@ -72,7 +78,7 @@ export default class Admin extends Component {
     }
         return (
             <div>
-                <h1>Guest List</h1>
+                <h1>Guest List</h1><div className="guestNumbers"><h2> going: {countGoing}</h2> <h2>not going: {countNotGoing}</h2> <h2>not sure: {countMaybe}</h2></div>
                 {this.state.guestArray.length && displayGuestArray}
             </div>
         );

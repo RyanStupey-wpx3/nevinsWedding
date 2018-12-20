@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './rsvpForm.css';
 import axios from 'axios';
+import {connect} from 'react-redux';
+import {GETRSVP} from '../../redux/reducer';
 
 let Person = class {
     constructor(status, primaryGuest, guestNames) {
@@ -12,7 +14,7 @@ let Person = class {
 
 //person object schema  = {invitedBy: invitee, guest_name: name of guest, status: invite response}
 
-export default class RsvpForm extends Component {
+class RsvpForm extends Component {
     constructor(props){
         super(props)
         const {rsvpTitle, rsvpVerbage, typeOfInput} = this.props
@@ -28,7 +30,7 @@ export default class RsvpForm extends Component {
             inviteResponse: 'going',
             alertNotification: "",
             showSubmitGuestButton: false,
-            inputPlaceHolder: "enter your name",
+            inputPlaceHolder: "enter your first and last name",
             deletePrimaryGuests: "",
             YesOrNoBool: false,
             deleteList: "",
@@ -111,8 +113,6 @@ export default class RsvpForm extends Component {
                 })
                 return null;
             }
-
-            
             //deconstruct
             const {addedGuests} = this.state
             //splice at index (id) 
@@ -129,10 +129,13 @@ export default class RsvpForm extends Component {
         //next define and write setGuest metho with dynamic object creation and property fill
     
     rsvpSubmitMethod(arr){
+        let blankString = ""
             let obj = new Person( this.state.inviteResponse, this.state.primaryGuest, arr)
             console.log('obj', obj)
+            this.props.GETRSVP(this.state.inviteResponse)
             axios.post('/api/guests', obj)
             .then((resp) =>{
+                this.props.GETRSVP("")
                 console.log(resp, "was sent back to front-end from db")
             })
             .catch((err) => {
@@ -175,7 +178,7 @@ export default class RsvpForm extends Component {
         if(this.state.addedGuests.length){
             guestArray = this.state.addedGuests.map((elem, ind) => {
             for(var i = 0; i < this.state.addedGuests.length; i++){
-                return (<li  className="guestLi">{elem} <div onClick={() => this.removeGuest(ind, elem)} className="xDiv">X</div></li>);
+                return (<li  className="guestLi">{elem} <div onClick={() => this.removeGuest(ind, elem)} className="xDiv"><i class="fa fa-times-circle" aria-hidden="true"></i></div></li>);
                 }
             })
         } else {
@@ -190,12 +193,14 @@ export default class RsvpForm extends Component {
                     {/* <form className="rsvpResponseForm">
                 <input type={typeOfInput.types.nameOfType} onChange={() => {this.determineInput(typeOfInput.types.nameOfType)}}/>
                     </form> */}
-                    <form onSubmit={this.handleSubmit}>
-                        <input type="text" onChange={(e)=>{this.setState({stagingGuest: e.target.value}); console.log('this.state.stagingGuest', this.state.stagingGuest)}} placeholder={this.state.inputPlaceHolder} value={this.state.stagingGuest}/> 
+                    <h3 className="nameH3 label">Name</h3>
+                    <p className="nameLabelDesc label">Enter your first and last name in the box below. To add another guest, select Add another guest and enter their first and last name as well.</p>
+                    <form className="nameForm" onSubmit={this.handleSubmit}>
+                        <input className="nameInput" type="text" onChange={(e)=>{this.setState({stagingGuest: e.target.value}); console.log('this.state.stagingGuest', this.state.stagingGuest)}} placeholder={this.state.inputPlaceHolder} value={this.state.stagingGuest}/> 
                         <button className="addguestButton" onClick={() => this.addGuest(this.state.stagingGuest)}>add guest</button>
                         {this.state.YesOrNoBool && 
                                     <div>
-                                        <div> {this.state.deletePrimaryGuests} </div>
+                                        <div> {this.state.deletePrimaryGuest} </div>
                                             <input type="radio" onChange={this.deletePrimaryGuest} value="yes" checked={this.state.deleteList === 'yes'}/> Yes 
                                             <input type="radio" onChange={this.deletePrimaryGuest} value="nevermind" checked={this.state.deleteList === 'nevermind'}/> Nevermind
                                             <input type="submit" onClick={() => this.deleteAllFromGuests()} value="reset"/>
@@ -207,6 +212,8 @@ export default class RsvpForm extends Component {
                             </ul>
                             </div> */}
                         <div>{this.state.pleaseEnterAValidName}</div>
+                        <h3 className="attendingH3 label">Attending the wedding?</h3>
+                        <p className="attendingLabel label">Select the option that best fits you and your guest(s). If you are not sure if you can attend yet simply select Want to come, but not sure yet and let us know when you make your decision.</p>
                         <input type="radio" name="gender"onChange={this.responseSelect} onClick={() => {console.log('hit 1')}} value="Going" checked={this.state.inviteResponse === 'Going'}/> Yes 
                         <input type="radio" name="gender"onChange={this.responseSelect} value="Maybe" checked={this.state.inviteResponse === 'Maybe'}/> Maybe
                         <input type="radio" name="gender"onChange={this.responseSelect} value="No, Sorry" checked={this.state.inviteResponse === 'No, Sorry'}/> Sorry, no
@@ -224,3 +231,14 @@ export default class RsvpForm extends Component {
         }
     
 }
+
+const mapDispatchToProps = {
+    GETRSVP: GETRSVP,
+}
+
+const mapStateToProps = (state) => {
+    return {
+       reduxRsvpStatus: state.reduxRsvpStatus,
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(RsvpForm)

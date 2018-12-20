@@ -57,19 +57,19 @@ setInterval(() => {
         return (
             <div className="timerParent">
                <div className="timerH2"> 
-               <div>
+               <div className="boxjr">
                    <h2>{days}</h2>
                    <h4 className="coundownLabels days">days</h4>
                 </div>
-                <div>
-                    <h2>{hours}</h2> 
+                <div className="boxjr">
+                    <h2 className="hoursNumber">{hours}</h2> 
                     <h4 className="coundownLabels hours">hours</h4>
                 </div>
-                <div>
+                <div className="boxjr">
                     <h2 className="minuteNumber">{minutes}</h2>
                     <h4 className="coundownLabels minutes">minutes</h4>
                 </div>
-                <div>
+                <div className="boxjr">
                     <h2 className="secondNumber">{seconds}</h2>
                     <h4 className="coundownLabels seconds">seconds</h4>
                 </div>

@@ -2,7 +2,7 @@
     /* border: 2px solid green; */
 }
 .timerH2 {
-    /* border: 2px solid orange; */
+    border: 2px solid orange;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,10 +14,12 @@
 }
 .timerH2 h2 {
     /* border: 2px solid violet; */
+    font-weight: lighter;
     padding: 1rem;
 }
 .coundownLabelsParent{
     /* border: 2px solid purple; */
+    font-weight: lighter;
     display: flex;
     flex-direction: row;
     width: 43rem;
@@ -38,6 +40,7 @@
     position: relative;
     left: 23%;
 }
+/* //copy from above Line  */
 .hoursNumber{}
 .hours {
     position: relative;
@@ -53,9 +56,54 @@
 }
 .secondNumber{
     position: relative;
-    left: 1rem;
+    left: 2rem;
 }
 .seconds {
     /* position: relative;
     left: 55%; */
 }
+
+@media(max-width: 700px){
+    .timerH2{
+        width: 100%;
+        font-size: 18px;
+        position: relative;
+        /* right: 3rem; */
+    }
+    .daysNumber{}
+    .days {
+        position: relative;
+        left: 23%;
+        top: -3rem;
+}
+    .minuteNumber{
+        position: relative;
+        left: -1rem;
+    }
+    .minutes {
+        position: relative;
+        left: -1rem;
+        top: -3rem;
+    }
+    .secondNumber{
+        position: relative;
+        left: -1.3rem;
+    }
+    .seconds {
+        position: relative;
+        left: -1.5rem;
+        top: -3rem;
+    }
+    .hoursNumber{
+        position: relative;
+        left: -1.5rem;
+    }
+    .hours {
+    position: relative;
+    left: -1rem;
+    top: -3rem;
+}
+}
+
+/* make timerH2 display: flex */
+/* use boxjr className to style individual flexobjects */

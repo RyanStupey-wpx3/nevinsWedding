@@ -1,18 +1,73 @@
 import React, { Component } from 'react';
 import './home.css'
-import '../../App.css'
+import '../../App.css';
+// import {connect} from 'react-redux';
+// import {GET_RSVP} from '../../redux/reducer';
+import {connect} from 'react-redux';
 import RsvpForm from '../../ComptsWIthState/RsvpForm/RsvpForm';
 import Itinerary from "../Itinerary/Itinerary";
 import SimpleMap from '../../ComptsWIthState/SimpleMap/SimpleMap';
 import {Link} from 'react-router-dom';
-import Countdown from "../../ComptsWIthState/CountDown/CountDown"
+import Countdown from "../../ComptsWIthState/CountDown/CountDown";
+import Going from '../../ComptsWIthState/Popups/Going';
+import NotGoing from '../../ComptsWIthState/Popups/NotGoing';
+import Maybe from '../../ComptsWIthState/Popups/Maybe';
+import ItineraryPage from "../../ComptsWIthState/Itinerary/ItineraryPage";
 
-export default class Home extends Component {
+
+class Home extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            guestIsGoing: false,
+            guestIsNotGoing: false,
+            guestIsMaybe: false,
+        }
+        
+    }
+    getSnapshotBeforeUpdate(oldprops) {
+        const {reduxRsvpStatus} = this.props
+
+        if (this.props.reduxRsvpStatus !== oldprops.reduxRsvpStatus) {
+            switch(reduxRsvpStatus){
+                case "going":
+                        this.setState({
+                            guestIsGoing: true,
+                            guestIsNotGoing: false,
+                            guestIsMaybe: false,
+                        })
+                break;
+                case "no, sorry":
+                        this.setState({
+                            guestIsGoing: false,
+                            guestIsNotGoing: true,
+                            guestIsMaybe: false,
+                        })
+                break;
+                case "maybe": 
+                        this.setState({
+                            guestIsGoing: false,
+                            guestIsNotGoing: false,
+                            guestIsMaybe: true,
+                        })
+                break;
+                default: 
+                        this.setState({
+                            guestIsGoing: false,
+                            guestIsNotGoing: false,
+                            guestIsMaybe: false,
+                        })
+            }
+        } else {
+            return null;
+        }
+        
+      }
+        
     render() {
         return (
             <div className="homeComponentDiv">
                 <div className="homeParentComponent">
-                    <div className="logoHeaderDiv"> <div style={{float: "right"}} className="links"><Link to="/itinerary"><button className="linkButton ItineraryView">Itinerary</button></Link><Link to="/whereToStay"><button className="linkButton WhereToStayView">Where to stay</button></Link></div></div>
                     <div className="sizer homeHeroDiv">
                         <div className="weddingInfoParent">
                         <div className="weddingInfoDiv">
@@ -26,10 +81,14 @@ export default class Home extends Component {
 
                     <div className="sizer white homeInviteFormDiv">
                         <RsvpForm rsvpTitle={"R.S.V.P"} rsvpVerbage={"Let us know if you plan on attending the wedding celebration. If you are not sure if you can attend yet simply select Want to come, but not sure yet and let us know when you make your decision. Please only add guests that have been invited unless your invitation has a plus one on it."}/>
+                        {this.state.GuestIsGoing  ? <Going open={true}/> : <Going open={false}/>} 
+                        {this.state.GuestIsNotGoing ? <NotGoing open={true}/> : <NotGoing open={false}/>} 
+                        {this.state.GuestIsMaybe ? <Maybe open={true}/> : <Maybe open={false}/>} 
                     </div>
                     <div className="sizer red homeItineraryDiv">
                         <Itinerary/>
                     </div>
+                    
                     <div className="sizer homeMapDiv">
                         <SimpleMap/>
                     </div>
@@ -37,7 +96,7 @@ export default class Home extends Component {
                         <div className="giftingRegister">
                             <h1>Gift Registry </h1>
                             <p className="giftRegistryDesc">We have been together for over 10 years and we honestly have every physical thing that we could possibly need. However, through our hard work and dedication we have not had the opportunity to explore new lands and cultures as much as we would like. So we ask that if you feel the need to send us a gift you contribute to an advanture that we will remember for a lifetime.</p>
-                            <button className="linkToTripRegistry">click here to register</button>
+                            <button className="linkToTripRegistry">Visit our Honeyfund</button>
                         </div>
                     </div>
                     <div className="sizer white homeBridalPartyDiv">
@@ -135,3 +194,11 @@ export default class Home extends Component {
         );
     }
 }
+
+
+const mapStateToProps = (state) => {
+    return {
+       reduxRsvpStatus: state.reduxRsvpStatus,
+    }
+}
+export default connect(mapStateToProps)(Home);
