@@ -2,7 +2,7 @@
     /* border: 2px solid green; */
 }
 .timerH2 {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;

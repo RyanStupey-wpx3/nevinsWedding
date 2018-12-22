@@ -193,6 +193,7 @@ class RsvpForm extends Component {
                     {/* <form className="rsvpResponseForm">
                 <input type={typeOfInput.types.nameOfType} onChange={() => {this.determineInput(typeOfInput.types.nameOfType)}}/>
                     </form> */}
+                    <div className="mainRSVPcontent">
                     <h3 className="nameH3 label">Name</h3>
                     <p className="nameLabelDesc label">Enter your first and last name in the box below. To add another guest, select Add another guest and enter their first and last name as well.</p>
                     <form className="nameForm" onSubmit={this.handleSubmit}>
@@ -200,7 +201,7 @@ class RsvpForm extends Component {
                         <button className="addguestButton" onClick={() => this.addGuest(this.state.stagingGuest)}>add guest</button>
                         {this.state.YesOrNoBool && 
                                     <div>
-                                        <div> {this.state.deletePrimaryGuest} </div>
+                                        <div className="deletePrimaryGuest"> {this.state.deletePrimaryGuest} </div>
                                             <input type="radio" onChange={this.deletePrimaryGuest} value="yes" checked={this.state.deleteList === 'yes'}/> Yes 
                                             <input type="radio" onChange={this.deletePrimaryGuest} value="nevermind" checked={this.state.deleteList === 'nevermind'}/> Nevermind
                                             <input type="submit" onClick={() => this.deleteAllFromGuests()} value="reset"/>
@@ -225,6 +226,7 @@ class RsvpForm extends Component {
                                 {guestArray}
                             </ul>
                             </div>
+                        </div>
                 </div>
             </div>
         );

@@ -30,7 +30,7 @@ export default class ItineraryPage extends Component {
                 <div className="sizer white">
                     <div className="bridalPartyInnerPlacementDiv">
                     <div className="imgDiv1">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
-                        <div className="bridalPartyInner description">
+                        <div className="bridalPartyInner descriptionPage">
                             <h2 className="groomsmenTitle">title Here</h2>
                             <p className="descriptionParagraph"><p className="locationDesc locationD2">
                         Soufflé wafer sweet caramels liquorice. Sweet cotton candy toffee sesame snaps croissant cake. Fruitcake jelly-o candy canes pie chocolate bar. Macaroon tootsie roll biscuit tart lollipop marzipan chocolate bar. Jujubes dragée candy canes.
@@ -41,7 +41,7 @@ export default class ItineraryPage extends Component {
                 <div className="sizer red">
                     <div className="bridalPartyInnerPlacementDiv">
                     <div className="imgDiv1">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
-                        <div className="bridalPartyInner description">
+                        <div className="bridalPartyInner descriptionPage">
                             <h2 className="groomsmenTitle">title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
@@ -50,7 +50,7 @@ export default class ItineraryPage extends Component {
                 <div className="sizer white">
                     <div className="bridalPartyInnerPlacementDiv">
                     <div className="imgDiv1">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
-                        <div className="bridalPartyInner description">
+                        <div className="bridalPartyInner descriptionPage">
                             <h2 className="groomsmenTitle">title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>

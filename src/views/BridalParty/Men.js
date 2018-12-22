@@ -24,7 +24,7 @@ export default class Groomesmen extends Component {
         }
         return (
             <div>
-                <h2>Groomesmen</h2>
+                <h2 className="titleH2">Groomesmen</h2>
                 <div className="sizer HeroDiv"></div>
                 <div className="sizer white">
                     <div className="bridalPartyInnerPlacementDiv">

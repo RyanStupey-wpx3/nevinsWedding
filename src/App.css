@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 .sizer{
   height: 40rem;
   width: 100%;
@@ -8,6 +6,7 @@
 }
 .white {
   background-color: white;
+  border: 2px solid purple;
 }
 .red {
   /* height: 40rem; */
@@ -38,8 +37,15 @@ a {
 .foot{
   padding: 1rem;
   background-color: white;
+  text-align: center;
 }
 @media(max-width: 700px){
+  .links {
+    /* border: 2px solid red; */
+    position: relative;
+    right: 0rem;
+    top: 2.5rem;
+  }
   .red{
     height:100%;
 }

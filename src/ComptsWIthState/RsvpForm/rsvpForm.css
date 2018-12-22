@@ -1,11 +1,12 @@
 .rsvpComponentDiv{
+    /* border: 2px solid red; */
     padding-top: 3rem;
     width: 100%;
     height: 30rem;
-    /* border: 2px solid red; */
 }
 .rsvpParentDiv{
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+    padding-top: 1rem;
     position: relative;
     top: -3rem;
     width: 50%;
@@ -18,6 +19,9 @@
     color: #761e35;
     padding: 0;
     margin: 0;
+}
+.deletePrimaryGuest{
+    color: red;
 }
 .rsvpVerbage{
     position: relative;
@@ -32,6 +36,7 @@
     /* padding-top: rem; */
 }
 .nameLabelDesc{
+    /* border: 2px solid green; */
     position: relative;
     top: -2rem;
 }
@@ -91,11 +96,23 @@
     color: white;
 }
 @media(max-width: 900px){
+    .mainRSVPcontent{
+        position: relative;
+        top: 2rem;
+    }
+    .rsvpVerbage{
+        display: none;
+    }
     .rsvpParentDiv{
         /* border: 2px solid blue; */
         width: 80%;
         height: inherit;
         text-align: left;
         margin: 0 auto;
+    }
+    .guestArrayUl{
+        padding-top: 0;
+        position: relative;
+        top: -1rem;
     }
 }

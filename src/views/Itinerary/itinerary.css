@@ -1,5 +1,5 @@
 .itineraryComponentDiv{
-    border: 3px solid green;
+    /* border: 3px solid green; */
     width: 100%;
     height: inherit;
 }
@@ -13,10 +13,12 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+.tabContent{
+    margin-top: 1.5rem;
+}
 
 .tabSizer{
     border:2px solid purple;
-
     width: 30%;
     font-family: 'Great Vibes', cursive;
     font-size: 1.5rem;
@@ -75,11 +77,17 @@ margin: 0.5rem auto;
 }
 
 @media(max-width: 1500px){
+    .tabContent{
+        margin-top: 0;
+    }
     .itineraryParentDiv{
         /* border: 2px solid red; */
         /* display: block;
         flex-direction: ; */
         /* width: 100%; */
+    }
+    .locationImage{
+        height: 55%;
     }
     .tabSizer{
         width: 35%;
@@ -92,10 +100,13 @@ margin: 0.5rem auto;
         /* padding: 1rem;   */
     }
     .learnMoreButton{
-        /* margin-top: 1rem; */
+        top: -1.3rem;
     }
 }
 @media(max-width: 1100px){
+    .tabContent{
+        margin-top: 0;
+    }
     .itineraryParentDiv{
         /* border: 2px solid red; */
         display: block;
