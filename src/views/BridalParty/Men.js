@@ -26,47 +26,47 @@ export default class Groomesmen extends Component {
             <div>
                 <h2 className="titleH2">Groomesmen</h2>
                 <div className="sizer HeroDiv"></div>
-                <div className="sizer white">
+                <div className="sizerWhite">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
                 </div>
-                <div className="sizer red">
+                <div className="sizerRed red">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
                 </div>
-                <div className="sizer white">
+                <div className="sizerWhite">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
                 </div>
-                <div className="sizer red">
+                <div className="sizerRed red">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
                 </div>
-                <div className="sizer white">
+                <div className="sizerWhite">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>

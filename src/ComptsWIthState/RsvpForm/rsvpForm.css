@@ -49,6 +49,14 @@
     color: #761e35;
     padding-top: 0.5rem;
 }
+.radioParent{
+    /* border: 2px solid green; */
+    display: flex;
+    flex-direction: column;
+}
+.inputLabels{
+    display: inline;
+}
 .label {
     /* border: 2px solid red; */
     margin: 0;
@@ -56,11 +64,14 @@
 .nameInput{
     width: 20rem;
 }
+.guestsAdded{
+    padding-top: 3rem;
+}
 .guestArrayUl{
     /* border: 2px solid blue; */
     padding-top: 1rem;
     margin: 0 auto;
-    width: 85%;
+    width: 90%;
     
 }
 .guestLi{

@@ -31,7 +31,7 @@ export default class Maides extends Component {
                     <div className="bridalPartyInnerPlacementDiv">
                     <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ export default class Maides extends Component {
                     <div className="bridalPartyInnerPlacementDiv">
                     <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
@@ -49,16 +49,16 @@ export default class Maides extends Component {
                     <div className="bridalPartyInnerPlacementDiv">
                     <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
                 </div>
-                <div className="sizeRed red">
+                <div className="sizerRed red">
                     <div className="bridalPartyInnerPlacementDiv">
                     <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
@@ -67,7 +67,7 @@ export default class Maides extends Component {
                     <div className="bridalPartyInnerPlacementDiv">
                     <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="groomsmenTitle">title Here</h2>
+                            <h2 className="sectionTitle">Title Here</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>

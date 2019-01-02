@@ -18,7 +18,7 @@
 }
 
 .tabSizer{
-    border:2px solid purple;
+    /* border:2px solid purple; */
     width: 30%;
     font-family: 'Great Vibes', cursive;
     font-size: 1.5rem;
@@ -78,7 +78,8 @@ margin: 0.5rem auto;
 
 @media(max-width: 1500px){
     .tabContent{
-        margin-top: 0;
+        /* border: 2px solid red;  */
+        margin-top: 0.5rem;
     }
     .itineraryParentDiv{
         /* border: 2px solid red; */
@@ -87,7 +88,7 @@ margin: 0.5rem auto;
         /* width: 100%; */
     }
     .locationImage{
-        height: 55%;
+        height: 45%;
     }
     .tabSizer{
         width: 35%;
@@ -100,12 +101,12 @@ margin: 0.5rem auto;
         /* padding: 1rem;   */
     }
     .learnMoreButton{
-        top: -1.3rem;
+        top: 0rem;
     }
 }
 @media(max-width: 1100px){
     .tabContent{
-        margin-top: 0;
+        margin-top: 1rem;
     }
     .itineraryParentDiv{
         /* border: 2px solid red; */
@@ -116,6 +117,7 @@ margin: 0.5rem auto;
     .tabSizer{
         width: 100%;
         height: 35rem;
+        margin-left: 0rem;
         margin-top: 3rem;
         margin-bottom: 3rem;
     }

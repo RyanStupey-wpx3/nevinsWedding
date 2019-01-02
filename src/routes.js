@@ -10,8 +10,7 @@ import ItineraryPage from "../src/ComptsWIthState/Itinerary/ItineraryPage";
 
 export default <Switch>
     <Route exact path="/" component={Home}/>
-    <Route path="/itinerary" component={Itinerary}/>
-    <Route path="/itineraryPage" component={ItineraryPage}/>
+    <Route path="/itinerary" component={ItineraryPage}/>
     <Route path="/whereToStay" component={WhereToStay}/>
     <Route path="/admin/nevins-wedding" component={Admin}/>
     <Route path="/groomesmen" component={Men}/>

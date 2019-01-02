@@ -27,15 +27,15 @@ export default class Admin extends Component {
         let displayGuestArray;
         let displaySubGuests;
         let countGoing = 0;
-        let countNotGoing;
-        let countMaybe;
+        let countNotGoing = 0;
+        let countMaybe = 0;
         if (this.state.guestArray.length){
             
             displayGuestArray = this.state.guestArray.map((elem) =>{
                console.log('elem.guest_names', elem.guest_names)
                 const status = elem.guest_status.toLowerCase();
                 if(status === "going"){
-                    countGoing = elem.guest_names.length
+                    countGoing = countGoing + elem.guest_names.length
                     return (
                     <div className="guestDiv">
                         <div className="primaryGuestGreen"> {elem.primary_guest} - {elem.guest_status}</div>
@@ -47,7 +47,8 @@ export default class Admin extends Component {
                     </div>
                     )
                 } else if(status === "no, sorry" || status === "not going"){
-                    countNotGoing = elem.guest_names.length
+                    countNotGoing =  elem.guest_names.length + countNotGoing
+                    console.log('countNotGoing', countNotGoing)
                return(
                    <div className="guestDiv">
                         <div className="primaryGuestRed"> {elem.primary_guest} - {elem.guest_status}</div>
@@ -59,7 +60,7 @@ export default class Admin extends Component {
                         </div>
                 </div>)
                 } else {
-                    countMaybe = elem.guest_names.length
+                    countMaybe = countMaybe + elem.guest_names.length
                     return (
                         <div className="guestDiv">
                         <div className="primaryGuestYellow"> {elem.primary_guest} - {elem.guest_status}</div>
@@ -78,7 +79,7 @@ export default class Admin extends Component {
     }
         return (
             <div>
-                <h1>Guest List</h1><div className="guestNumbers"><h2> going: {countGoing}</h2> <h2>not going: {countNotGoing}</h2> <h2>not sure: {countMaybe}</h2></div>
+                <h1 className="adminH1">Guest List</h1><div className="guestNumbers"><h2 className="goingGreen peg"> going: {countGoing}</h2> <h2 className="deadRed peg">not going: {countNotGoing}</h2> <h2 className="mellowYellow peg">not sure: {countMaybe}</h2></div>
                 {this.state.guestArray.length && displayGuestArray}
             </div>
         );

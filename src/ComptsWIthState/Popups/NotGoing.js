@@ -1,5 +1,8 @@
 import React from 'react'
 import Popup from 'reactjs-popup'
+import './popup.css'
+import {connect} from 'react-redux';
+import {GETRSVP} from '../../redux/reducer';
 
 
 class NotGoing extends React.Component {
@@ -14,31 +17,34 @@ class NotGoing extends React.Component {
       this.setState({ open: true })
     }
     closeModal () {
+      this.props.GETRSVP("")
       this.setState({ open: false })
     }
   
     render() {
       return (
-        <div>
-          <button className="button" onClick={this.openModal}>
-            Controlled Popup
-          </button>
-          <Popup
+        <div className="popupParent">
+          <Popup 
             open={this.props.open}
             closeOnDocumentClick
             onClose={this.closeModal}
           >
             <div className="modal">
-              <a className="close" onClick={this.closeModal}>
-                Done&times;
+              <h1 className="popupH2">Thats ok!</h1> 
+              <hr className="popupHorizontalRule"/>
+              <p>Planning for these events and the travel included can be hard. We totally understand if that is not doable for you. Thank you for taking the time to let us know. You have and will contiune to be a big part of our lives and we hope to see you soon!</p>
+              <div className="Xclose" >
+              <a onClick={this.closeModal}>
+                Done
               </a>
-              <p>Be sure to check out the information on where to stay and where the party is at. Doors open at 6:30PM and the ceremony will start promtly at 7:00PM.</p>
-              <p>Parking is available outside the barn and there is overflow parking next door on the top floor of the Costco parking garage.</p>
-              <p>See you there!</p>
+              </div>
             </div>
           </Popup>
         </div>
       )
     }
   }
-  export default NotGoing;
+  const mapDispatchToProps = {
+    GETRSVP: GETRSVP,
+}
+  export default connect(() =>{}, mapDispatchToProps)(NotGoing);

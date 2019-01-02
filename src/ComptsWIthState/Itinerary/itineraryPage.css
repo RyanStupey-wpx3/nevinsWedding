@@ -1,3 +1,35 @@
+/* .HeroDiv{
+    background-image: url('../../images/background.jpeg');
+    background-size: cover;
+}
+.bridalPartyInnerPlacementDiv{
+    border: 2px solid green;
+    width: 75%;
+    height: 27rem;
+    position: relative;
+    top: 6rem;
+    left: 13%;
+    /////////////////////
+    margin-top: 15rem;
+    /////////////////////
+}
+
+.descriptionPage{
+    position: relative;
+    top: -26rem;
+    left: 50%;
+    border: 2px solid purple;
+    width: 32rem;
+    height: 25rem;
+}
+
+.imgDiv1{
+    background-color: lightgrey;
+    height: 27rem;
+    width: 45%;
+} */
+
+
 .HeroDiv{
     background-image: url('../../images/background.jpeg');
     background-size: cover;
@@ -7,22 +39,80 @@
     width: 75%;
     height: 27rem;
     position: relative;
-    top: 6rem;
+    top: 2rem;
     left: 13%;
-    /* margin-top: 15rem; */
-}
+     /* margin-top: 15rem; */
+} 
 
-.descriptionPage{
-    position: relative;
-    top: -26rem;
-    left: 50%;
+.descriptionParagraph{
     /* border: 2px solid purple; */
+    position: relative;
+    top: -13rem;
+    left: 50%;
     width: 32rem;
     height: 25rem;
 }
+.descriptionH2{
+    /* border: 2px solid red; */
 
+    position: absolute;
+    /* top: 7rem; */
+    left: 3rem;
+    width: 100%;
+    text-align: center;
+}
 .imgDiv1{
     background-color: lightgrey;
-    height: 27rem;
+    height: 23rem;
     width: 45%;
+    position: relative;
+    /* top: 5rem; */
+}
+@media(max-width: 900px){
+    .titleH2{
+        /* border: 2px solid red; */
+    
+        position: absolute;
+        top: 3rem;
+        width: 100%;
+        text-align: center;
+    }
+.sizerWhite{
+    height: 30rem;
+}
+
+/* since this page is exactly a replica of bridesmaides route or itinerary route
+i will just delete the entire code from this page and copy css as well */
+    .bridalPartyInnerPlacementDiv{
+        border: 2px solid green;
+        width: 100%;
+        height: 27rem;
+        position: relative;
+        /* top: 1rem; */
+        /* margin: 1rem; */
+        left: 0;
+        /* margin-top: 15rem; */
+    }
+    .descriptionParagraph{
+        position: relative;
+        top: 0rem;
+        left: 0%;
+        border: 2px solid purple;
+        margin: 0 auto;
+        width: 20rem;
+        height: 15rem;
+        font-size: 12px;
+    }
+    .descriptionH2 {
+        /* border: 2px solid purple; */
+        position: relative;
+        /* top: 4rem; */
+        left: 0rem;
+    }
+    
+    .imgDiv1{
+        margin: 0 auto;
+        height: 15rem;
+        width: 100%;
+    }
 }
