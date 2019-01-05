@@ -33,11 +33,11 @@ class NotGoing extends React.Component {
               <h1 className="popupH2">Thats ok!</h1> 
               <hr className="popupHorizontalRule"/>
               <p>Planning for these events and the travel included can be hard. We totally understand if that is not doable for you. Thank you for taking the time to let us know. You have and will contiune to be a big part of our lives and we hope to see you soon!</p>
-              <div className="Xclose" >
               <a onClick={this.closeModal}>
+              <div className="Xclose" >
                 Done
-              </a>
               </div>
+              </a>
             </div>
           </Popup>
         </div>

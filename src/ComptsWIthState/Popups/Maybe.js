@@ -35,11 +35,11 @@ class Maybe extends React.Component {
               <p>We totally understand that these things can be hard to plan and pay for. We will save your seat just let us know when you have offically made your decision.</p>
               <p className="whenUknow">When you do know if you will be able to attend, just fill out the RSVP form again with your new response and we will update the list.</p>
               <p className="hope2See">Hope to see you soon!</p>
-              <div className="Xclose" >
               <a onClick={this.closeModal}>
+              <div className="Xclose" >
                 Done
-              </a>
               </div>
+              </a>
             </div>
           </Popup>
         </div>
