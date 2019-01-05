@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
- 
-const Pin = ({ text }) => <div className="pin">{text}</div>;
+import "./simpleMap.css"
+const Pin = () => <i class="fa fa-map-pin fa-3x" aria-hidden="true"></i>
  
 class SimpleMap extends Component {
   static defaultProps = {
     center: {
-       lat: 47.608013,
-       lng: -122.335167,
+       lat: 47.530102,
+       lng: -122.0335167
     },
     zoom: 11
   };
@@ -21,9 +21,9 @@ class SimpleMap extends Component {
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
-          <Pin
-            lat={47.608013}
-            lng={-122.335167}
+          <Pin className="pin"
+            lat={47.530102}
+            lng={-122.0335167} 
             text={'Seattle'}
           />
         </GoogleMapReact>

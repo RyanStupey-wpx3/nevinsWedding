@@ -65,16 +65,21 @@ adminH1{
     padding-bottom: 2rem;
 }
 .guestDiv{
+    /* border: 2px solid green; */
     width: 30rem;
     padding-bottom: 1rem;
     margin-left: 0.5rem;
 }
 
 @media(max-width: 1000px){
+    .mainGuestDiv{
+        position: relative;
+        top: 2rem;
+    }
     .guestNumbers{
         width: 25rem;
         position: relative;
-        top: -3rem;
+        top: -1rem;
         left: 0rem;
         float: left;
         font-size: 14px;

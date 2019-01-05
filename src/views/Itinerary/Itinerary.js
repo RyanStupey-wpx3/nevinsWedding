@@ -16,7 +16,7 @@ export default class Itinerary extends Component {
                             <p className="locationDesc locationD1">
                                  wafer sweet caramels liquorice. Sweet cotton candy toffee sesame snaps croissant cake. Fruitcake jelly-o candy canes pie chocolate bar. Macaroon tootsie roll biscuit tart lollipop marzipan chocolate bar. Jujubes dragée candy canes.
                             </p>
-                            <Link to="/itineraryPage"><button className="learnMoreButton">Learn More</button></Link>
+                            <Link to="/itinerary"><button className="learnMoreButton">Learn More</button></Link>
                         </div>
                     </div>
                     <div className="tabSizer white location2">
@@ -28,7 +28,7 @@ export default class Itinerary extends Component {
                             <p className="locationDesc locationD2">
                                 Soufflé wafer sweet caramels liquorice. Sweet cotton candy toffee sesame snaps croissant cake. Fruitcake jelly-o candy canes pie chocolate bar. Macaroon tootsie roll biscuit tart lollipop marzipan chocolate bar. Jujubes dragée candy canes.
                             </p>
-                            <Link to="/itineraryPage"><button className="learnMoreButton">Learn More</button></Link>
+                            <Link to="/itinerary"><button className="learnMoreButton">Learn More</button></Link>
                         </div>
                     </div>
                     <div className="tabSizer white location3">
@@ -40,7 +40,7 @@ export default class Itinerary extends Component {
                             <p className="locationDesc locationD3">
                                  wafer sweet caramels liquorice. Sweet cotton candy toffee sesame snaps croissant cake. Fruitcake jelly-o candy canes pie chocolate bar. Macaroon tootsie roll biscuit tart lollipop marzipan chocolate bar. Jujubes dragée candy canes.
                             </p>
-                            <Link to="/itineraryPage"><button className="learnMoreButton">Learn More</button></Link>
+                            <Link to="/itinerary"><button className="learnMoreButton">Learn More</button></Link>
                         </div>
                     </div>
                 </div>

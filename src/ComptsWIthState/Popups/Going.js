@@ -35,11 +35,11 @@ class Going extends React.Component {
               <p>Be sure to check out the information on where to stay and where the party is at. Doors open at 6:30PM and the ceremony will start promtly at 7:00PM.</p>
               <p className="goingParkingInfo">Parking is available outside the barn and there is overflow parking next door on the top floor of the Costco parking garage.</p>
               <p>See you there!</p>
-              <div className="Xclose" >
               <a onClick={this.closeModal}>
+              <div className="Xclose" >
                 Done
-              </a>
               </div>
+              </a>
             </div>
           </Popup>
         </div>

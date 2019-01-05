@@ -28,24 +28,27 @@ export default class ItineraryPage extends Component {
                 <div className="sizer HeroDiv"></div>
                 <div className="sizerForBridal white">
                     <div className="bridalPartyInnerPlacementDiv">
+                    {/* insert photos of bridesmaide in img tag below */}
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="sectionTitle">Title Here</h2>
+                            <h2 className="sectionTitle">Rehearsal Dinner</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
                 </div>
                 <div className="sizerForBridal red ">
                     <div className="bridalPartyInnerPlacementDiv">
+                    {/* insert photos of bridesmaide in img tag below */}
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
-                            <h2 className="sectionTitle">Title Here</h2>
+                        <h2 className="sectionTitle">Ceremony</h2>
                             <p className="descriptionParagraph">{this.state.temporaryTxt}</p>
                         </div>
                     </div>
                 </div>
                 <div className="sizerForBridal white">
                     <div className="bridalPartyInnerPlacementDiv">
+                    {/* insert photos of bridesmaide in img tag below */}
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
                             <h2 className="sectionTitle">Title Here</h2>
@@ -55,6 +58,7 @@ export default class ItineraryPage extends Component {
                 </div>
                 <div className="sizerForBridal red">
                     <div className="bridalPartyInnerPlacementDiv">
+                    {/* insert photos of bridesmaide in img tag below */}
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
                             <h2 className="sectionTitle">Title Here</h2>
@@ -64,6 +68,7 @@ export default class ItineraryPage extends Component {
                 </div>
                 <div className="sizerForBridal white">
                     <div className="bridalPartyInnerPlacementDiv">
+                    {/* insert photos of bridesmaide in img tag below */}
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
                             <h2 className="sectionTitle">Title Here</h2>

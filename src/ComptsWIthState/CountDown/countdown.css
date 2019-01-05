@@ -33,22 +33,26 @@
     /* border: 2px solid blue; */
     position: relative;
     top: -4rem;
+    font-weight: lighter;
     /* left: 20%; */
 }
 .daysNumber{}
 .days {
     position: relative;
-    left: 23%;
+    left: 20%;
 }
 /* //copy from above Line  */
-.hoursNumber{}
+.hoursNumber{
+    position: relative;
+    left: -0.5rem;
+}
 .hours {
     position: relative;
     left: -0.5rem;
 }
 .minuteNumber{
     position: relative;
-    left: 1rem;
+    left: 0.8rem;
 }
 .minutes {
     position: relative;
@@ -56,7 +60,7 @@
 }
 .secondNumber{
     position: relative;
-    left: 2rem;
+    left: 0.8rem;
 }
 .seconds {
     /* position: relative;

@@ -135,6 +135,9 @@ class RsvpForm extends Component {
             this.props.GETRSVP(this.state.inviteResponse)
             axios.post('/api/guests', obj)
             .then((resp) =>{
+                this.setState({
+                    addedGuests: [],
+                })
                 // this.props.GETRSVP("")
                 console.log(resp, "was sent back to front-end from db")
             })

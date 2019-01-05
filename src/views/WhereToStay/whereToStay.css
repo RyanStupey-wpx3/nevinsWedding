@@ -30,13 +30,8 @@
 }
 
 @media(max-width: 800px){
-    /* .sizer{
-        height: 50rem;
-    } */
-   
 .name{
     /* border-top: 2px solid black; */
-    /* border-bottom: 2px solid black; */
     text-align: center;
     position: relative;
     top: -30.5rem;
@@ -75,8 +70,6 @@
  }
  
  .red .name{
-     /* border-top: 2px solid black; */
-     /* border-bottom: 2px solid black; */
      color: #761E35;
      text-align: center;
      position: relative;

@@ -26,7 +26,7 @@ export default class WhereToStay extends Component {
             <div>
                 <h2 className="titleH2">Where to stay</h2>
                 <div className="sizer HeroDiv"></div>
-                <div className="sizerForBridal white">
+                <div className="sizerWhite">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
@@ -35,7 +35,7 @@ export default class WhereToStay extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="sizerForBridal red">
+                <div className="sizerRed red">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
@@ -44,7 +44,7 @@ export default class WhereToStay extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="sizerForBridal white">
+                <div className="sizerWhite">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
@@ -53,7 +53,7 @@ export default class WhereToStay extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="sizerForBridal red">
+                <div className="sizerRed red">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">
@@ -62,7 +62,7 @@ export default class WhereToStay extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="sizerForBridal white">
+                <div className="sizerWhite">
                     <div className="bridalPartyInnerPlacementDiv">
                         <div className="imgDiv">{/* <img className="bridalPartyInnerImage" src={require('')}/> */}</div>
                         <div className="bridalPartyInner description">

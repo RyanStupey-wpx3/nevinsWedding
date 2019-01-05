@@ -80,7 +80,7 @@ export default class Admin extends Component {
         return (
             <div>
                 <h1 className="adminH1">Guest List</h1><div className="guestNumbers"><h2 className="goingGreen peg"> going: {countGoing}</h2> <h2 className="deadRed peg">not going: {countNotGoing}</h2> <h2 className="mellowYellow peg">not sure: {countMaybe}</h2></div>
-                {this.state.guestArray.length && displayGuestArray}
+                <div className="mainGuestDiv"> {this.state.guestArray.length && displayGuestArray}</div>
             </div>
         );
     }
