@@ -30,7 +30,7 @@
 }
 .nameH3{
     position: relative;
-    top: -2rem;
+    top: -1rem;
     font-weight: bold;
     color: #761e35;
     /* padding-top: rem; */
@@ -38,7 +38,7 @@
 .nameLabelDesc{
     /* border: 2px solid green; */
     position: relative;
-    top: -2rem;
+    top: -1rem;
 }
 .nameForm{
     position: relative;
@@ -62,10 +62,19 @@
     margin: 0;
 }
 .nameInput{
+    margin-top: 1rem;
     width: 20rem;
+    padding: .5rem;
+    border-radius: 3px;
+    font-size: 16px;
 }
-.guestsAdded{
-    padding-top: 3rem;
+.rsvpButton {
+    background-color: #761e35;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 900;
+    padding: 5px;
+    margin-top: 1rem;
 }
 .guestArrayUl{
     /* border: 2px solid blue; */
@@ -73,6 +82,15 @@
     margin: 0 auto;
     width: 90%;
     
+}
+.addguestButton {
+    padding: .5rem;
+    margin-left: 1rem;
+    border-radius: 3px;
+    font-size: 16px;
+}
+.resetButton {
+    margin-left: 5px;
 }
 .guestLi{
     border: 0.5px solid black;

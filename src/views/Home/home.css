@@ -8,8 +8,8 @@
     background-image: url('../../images/bitmap.png');
     background-size: cover;
 }
-.pin {
-
+.resize {
+    width: 20px !important;
 }
 .homeInviteFormDiv{
     height: 43rem;

@@ -3,6 +3,7 @@ import './rsvpForm.css';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {GETRSVP} from '../../redux/reducer';
+import {sendInfo} from '../../index.js'
 
 let Person = class {
     constructor(status, primaryGuest, guestNames) {
@@ -30,7 +31,7 @@ class RsvpForm extends Component {
             inviteResponse: 'going',
             alertNotification: "",
             showSubmitGuestButton: false,
-            inputPlaceHolder: "enter your first and last name",
+            inputPlaceHolder: "Enter your first and last name",
             deletePrimaryGuests: "",
             YesOrNoBool: false,
             deleteList: "",
@@ -133,6 +134,7 @@ class RsvpForm extends Component {
             let obj = new Person( this.state.inviteResponse, this.state.primaryGuest, arr)
             console.log('obj', obj)
             this.props.GETRSVP(this.state.inviteResponse)
+            sendInfo(obj);
             axios.post('/api/guests', obj)
             .then((resp) =>{
                 this.setState({
@@ -201,13 +203,13 @@ class RsvpForm extends Component {
                     <p className="nameLabelDesc label">Enter your first and last name in the box below. To add another guest, select Add another guest and enter their first and last name as well.</p>
                     <form className="nameForm" onSubmit={this.handleSubmit}>
                         <input className="nameInput" type="text" onChange={(e)=>{this.setState({stagingGuest: e.target.value}); console.log('this.state.stagingGuest', this.state.stagingGuest)}} placeholder={this.state.inputPlaceHolder} value={this.state.stagingGuest}/> 
-                        <button className="addguestButton" onClick={() => this.addGuest(this.state.stagingGuest)}>add guest</button>
+                        <button className="addguestButton" onClick={() => this.addGuest(this.state.stagingGuest)}>Add guest</button>
                         {this.state.YesOrNoBool && 
                                     <div >
                                         <div className="deletePrimaryGuest"> {this.state.deletePrimaryGuest} </div>
                                             <input type="radio" onChange={this.deletePrimaryGuest} value="yes" checked={this.state.deleteList === 'yes'}/> Yes 
                                             <input type="radio" onChange={this.deletePrimaryGuest} value="nevermind" checked={this.state.deleteList === 'nevermind'}/> Nevermind
-                                            <input type="submit" onClick={() => this.deleteAllFromGuests()} value="reset"/>
+                                            <input className="resetButton" type="submit" onClick={() => this.deleteAllFromGuests()} value="Remove guests"/>
                                     </div>
                         }
                             {/* <div className="guestsAdded">
@@ -224,11 +226,11 @@ class RsvpForm extends Component {
                         <h3 className="attendingH3 label">Attending the wedding?</h3>
                         <p className="attendingLabel label">Select the option that best fits you and your guest(s). If you are not sure if you can attend yet simply select Want to come, but not sure yet and let us know when you make your decision.</p>
                         <div className="radioParent">
-                        <div  className="inputLabels"><input type="radio" name="gender"onChange={this.responseSelect} onClick={() => {console.log('hit 1')}} value="Going" checked={this.state.inviteResponse === 'Going'}/> Can't wait</div> 
-                        <div  className="inputLabels"><input type="radio" name="gender"onChange={this.responseSelect} value="Maybe" checked={this.state.inviteResponse === 'Maybe'}/> Want to come, but not sure yet</div>
-                        <div  className="inputLabels"><input type="radio" name="gender"onChange={this.responseSelect} value="No, Sorry" checked={this.state.inviteResponse === 'No, Sorry'}/> Sorry, no</div>
+                            <div  className="inputLabels"><input type="radio" name="gender"onChange={this.responseSelect} onClick={() => {console.log('hit 1')}} value="Going" checked={this.state.inviteResponse === 'Going'}/> Can't wait</div>
+                            <div  className="inputLabels"><input type="radio" name="gender"onChange={this.responseSelect} value="Maybe" checked={this.state.inviteResponse === 'Maybe'}/> Want to come, but not sure yet</div>
+                            <div  className="inputLabels"><input type="radio" name="gender"onChange={this.responseSelect} value="No, Sorry" checked={this.state.inviteResponse === 'No, Sorry'}/> Sorry, no</div>
                         </div>
-                        {this.state.showSubmitGuestButton && <button onClick={() => this.rsvpSubmitMethod(this.state.addedGuests)}>submit guests</button>}
+                        {this.state.showSubmitGuestButton && <button className="rsvpButton" onClick={() => this.rsvpSubmitMethod(this.state.addedGuests)}>R.S.V.P</button>}
                     </form>
                     
                         </div>
